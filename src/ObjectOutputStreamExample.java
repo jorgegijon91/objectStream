@@ -113,7 +113,10 @@ public class ObjectOutputStreamExample {
         try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("objetosPersonalizados.txt"))){
             List<Alumno> alumnos = (List<Alumno>) ois.readObject();
             System.out.println(alumnos.size());
-            System.out.println(alumnos);
+            //Bucle for each para alumnos
+            for(Alumno alumno : alumnos){
+                System.out.println(alumno);
+            }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
